@@ -84,7 +84,7 @@ include 'components/save_send.php';
       <div class="info">
          <p><span style="color: #da2c32;"><b>RM </b></span><span><?= $fetch_property['price']; ?></span></p>
          <p><i class="fas fa-user"></i><span><?= $fetch_user['name']; ?></span></p>
-         <p><i class="fas fa-phone"></i><a href="tel:1234567890"><?= $fetch_user['number']; ?></a></p>
+         <p><i class="fas fa-phone"></i><?= $fetch_user['number']; ?></p>
          <p><i class="fas fa-building"></i><span><?= $fetch_property['type']; ?></span></p>
          <p><i class="fas fa-house"></i><span><?= $fetch_property['offer']; ?></span></p>
          <p><i class="fas fa-calendar"></i><span><?= $fetch_property['date']; ?></span></p>
@@ -100,7 +100,6 @@ include 'components/save_send.php';
          </div>
          <div class="box">
             <p><i>Carpet Area :</i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
-            <p><i>Age :</i><span><?= $fetch_property['age']; ?> years</span></p>
             <p><i>Total Floors :</i><span><?= $fetch_property['total_floors']; ?></span></p>
             <p><i>Room Floor :</i><span><?= $fetch_property['room_floor']; ?></span></p>
             <p><i>Furnished :</i><span><?= $fetch_property['furnished']; ?></span></p>
@@ -142,6 +141,7 @@ include 'components/save_send.php';
             }
          ?>
          <input type="submit" value="send enquiry" name="send" class="btn">
+         <a href="https://api.whatsapp.com/send?phone=6<?=$fetch_user['number'];?>&text=Berminat...%20<?=$fetch_property['property_name'];?>%20%21%20%20RM%20<?=$fetch_property['price'];?>" class="btn-whatsapp">send whatsapp</a>
       </form>
    </div>
    <?php

@@ -12,7 +12,7 @@
       </div>
 
       <div class="box">
-         <a href="home.php"><span>home</span></a>
+         <a href="index.php"><span>home</span></a>
          <a href="about.php"><span>about</span></a>
          <a href="contact.php"><span>contact</span></a>
          <a href="listings.php"><span>all listings</span></a>

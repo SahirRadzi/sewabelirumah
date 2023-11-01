@@ -2,6 +2,7 @@
 
 :root {
   --main-color: #da2c32;
+  --whatsapp: #008069;
   --light-color: #666;
   --light-bg: #eee;
   --white: #fff;
@@ -84,12 +85,28 @@ section {
   text-transform: capitalize;
 }
 
+.btn-whatsapp {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background-color: var(--whatsapp);
+  color: var(--white);
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
 .btn:hover,
 .inline-btn:hover {
   background-color: var(--black);
 }
 
-.btn {
+.btn-whatsapp:hover {
+  text-transform: uppercase;
+}
+
+.btn,
+.btn-whatsapp {
   display: block;
   width: 100%;
 }

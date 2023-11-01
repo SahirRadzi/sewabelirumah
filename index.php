@@ -260,6 +260,7 @@ include 'components/save_send.php';
             <div class="flex-btn">
                <a href="view_property.php?get_id=<?= $fetch_property['id']; ?>" class="btn">view property</a>
                <input type="submit" value="send enquiry" name="send" class="btn">
+               <a href="https://api.whatsapp.com/send?phone=6<?=$fetch_user['number'];?>&text=Berminat...%20<?=$fetch_property['property_name'];?>%20%21%20%20RM%20<?=$fetch_property['price'];?>" class="btn-whatsapp">send whatsapp</a>
             </div>
          </div>
       </form>
@@ -295,6 +296,15 @@ include 'components/save_send.php';
 <script src="js/script.js"></script>
 
 <?php include 'components/message.php'; ?>
+
+<!-- <script>
+   function sendwhatsapp(){
+      var phonenumber = document.getElementById("#phonenumber");
+
+      phonenumber.value;
+
+   }
+</script> -->
 
 <script>
 
