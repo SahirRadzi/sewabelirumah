@@ -45,8 +45,18 @@
             <li><a href="saved.php">saved <i class="far fa-heart"></i></a></li>
             <li><a href="#">account <i class="fas fa-angle-down"></i></a>
                <ul>
+                  <?php
+                  $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+                  $select_profile->execute([$user_id]);
+                  if($select_profile->rowCount() > 0 ){
+                     $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+                  ?>
+                  <li><a href="#"><?= $fetch_profile['name'] ;?></a></li>
+                  <?php 
+                   }else{
+                  ?>
                   <li><a href="login.php">login now</a></li>
-                  <li><a href="register.php">register new</a></li>
+                  <?php } ?>
                   <?php if($user_id != ''){ ?>
                   <li><a href="update.php">update profile</a></li>
                   <li><a href="components/user_logout.php" onclick="return confirm('logout from this website?');">logout</a>

@@ -1,6 +1,6 @@
 <?php
 
-   $db_name = 'mysql:host=localhost;dbname=sewabeli_rumah_db';
+   $db_name = 'mysql:host=localhost;dbname=2nd_home_db';
    $db_user_name = 'root';
    $db_user_pass = '';
 
