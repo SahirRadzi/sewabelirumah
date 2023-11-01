@@ -16,4 +16,16 @@
       return $randomString;
   }
 
+  function create_forgot_pass(){
+    $str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+    $rand = array();
+    $length = strlen($str) - 1;
+
+    for($i = 0; $i < 8; $i++){
+       $n = mt_rand(0, $length);
+       $rand[] = $str[$n];
+    }
+    return implode($rand);
+ }
+
 ?>
