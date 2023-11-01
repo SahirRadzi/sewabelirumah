@@ -92,7 +92,6 @@ include 'components/save_send.php';
       <h3 class="title">details</h3>
       <div class="flex">
          <div class="box">
-            <p><i>Rooms :</i><span><?= $fetch_property['bhk']; ?> BHK</span></p>
             <p><i>Deposit Amount : </i><span><span style="margin-right: .5rem;"><b>RM</b></span><?= $fetch_property['deposite']; ?></span></p>
             <p><i>Status :</i><span><?= $fetch_property['status']; ?></span></p>
             <p><i>Bedroom :</i><span><?= $fetch_property['bedroom']; ?></span></p>
