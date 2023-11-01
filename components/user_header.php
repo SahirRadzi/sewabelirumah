@@ -51,7 +51,7 @@
                   if($select_profile->rowCount() > 0 ){
                      $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
                   ?>
-                  <li><a href="#"><?= $fetch_profile['name'] ;?></a></li>
+                  <li><a href="update.php"><?= $fetch_profile['name'] ;?></a></li>
                   <?php 
                    }else{
                   ?>
