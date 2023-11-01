@@ -7,7 +7,7 @@
       <div class="box">
          <a href="#"><i class="fas fa-phone"></i><span>+601133165639</span></a>
          <a href="#"><i class="fas fa-phone"></i><span>+60123456789</span></a>
-         <a href="#"><i class="fas fa-envelope"></i><span>2ndhome@gmail.com</span></a>
+         <a href="#"><i class="fas fa-envelope"></i><span>app.sewabelirumah@gmail.com</span></a>
          <a href="#"><i class="fas fa-map-marker-alt"></i><span>32040, Seri Manjung Perak.</span></a>
       </div>
 

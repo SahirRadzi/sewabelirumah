@@ -57,7 +57,6 @@ include 'components/save_send.php';
                <p>offer type <span>*</span></p>
                <select name="h_offer" class="input" required>
                   <option value="sale">sale</option>
-                  <option value="resale">resale</option>
                   <option value="rent">rent</option>
                </select>
             </div>

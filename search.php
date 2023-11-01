@@ -48,7 +48,6 @@ include 'components/save_send.php';
                <p>offer type</p>
                <select name="offer" class="input" required>
                   <option value="sale">sale</option>
-                  <option value="resale">resale</option>
                   <option value="rent">rent</option>
                </select>
             </div>
@@ -58,20 +57,6 @@ include 'components/save_send.php';
                   <option value="flat">flat</option>
                   <option value="house">house</option>
                   <option value="shop">shop</option>
-               </select>
-            </div>
-            <div class="box">
-               <p>how many BHK</p>
-               <select name="bhk" class="input" required>
-                  <option value="1">1 BHK</option>
-                  <option value="2">2 BHK</option>
-                  <option value="3">3 BHK</option>
-                  <option value="4">4 BHK</option>
-                  <option value="5">5 BHK</option>
-                  <option value="6">6 BHK</option>
-                  <option value="7">7 BHK</option>
-                  <option value="8">8 BHK</option>
-                  <option value="9">9 BHK</option>
                </select>
             </div>
             <div class="box">
