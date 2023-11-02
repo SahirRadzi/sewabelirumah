@@ -36,8 +36,6 @@ if(isset($_POST['update'])){
    $status = filter_var($status, FILTER_SANITIZE_STRING);
    $furnished = $_POST['furnished'];
    $furnished = filter_var($furnished, FILTER_SANITIZE_STRING);
-   $bhk = $_POST['bhk'];
-   $bhk = filter_var($bhk, FILTER_SANITIZE_STRING);
    $bedroom = $_POST['bedroom'];
    $bedroom = filter_var($bedroom, FILTER_SANITIZE_STRING);
    $bathroom = $_POST['bathroom'];
@@ -46,8 +44,6 @@ if(isset($_POST['update'])){
    $balcony = filter_var($balcony, FILTER_SANITIZE_STRING);
    $carpet = $_POST['carpet'];
    $carpet = filter_var($carpet, FILTER_SANITIZE_STRING); 
-   $age = $_POST['age'];
-   $age = filter_var($age, FILTER_SANITIZE_STRING);
    $total_floors = $_POST['total_floors'];
    $total_floors = filter_var($total_floors, FILTER_SANITIZE_STRING);
    $room_floor = $_POST['room_floor'];
@@ -245,8 +241,8 @@ if(isset($_POST['update'])){
       }
    }
 
-   $update_listing = $conn->prepare("UPDATE `property` SET property_name = ?, address = ?, price = ?, type = ?, offer = ?, status = ?, furnished = ?, bhk = ?, deposite = ?, bedroom = ?, bathroom = ?, carpet = ?, age = ?, total_floors = ?, room_floor = ?, loan = ?, lift = ?, security_guard = ?, play_ground = ?, garden = ?, water_supply = ?, power_backup = ?, parking_area = ?, gym = ?, shopping_mall = ?, hospital = ?, school = ?, market_area = ?, description = ? WHERE id = ?");   
-   $update_listing->execute([$property_name, $address, $price, $type, $offer, $status, $furnished, $bhk, $deposite, $bedroom, $bathroom, $carpet, $age, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $description, $update_id]);
+   $update_listing = $conn->prepare("UPDATE `property` SET property_name = ?, address = ?, price = ?, type = ?, offer = ?, status = ?, furnished = ?, deposite = ?, bedroom = ?, bathroom = ?, carpet = ?, total_floors = ?, room_floor = ?, loan = ?, lift = ?, security_guard = ?, play_ground = ?, garden = ?, water_supply = ?, power_backup = ?, parking_area = ?, gym = ?, shopping_mall = ?, hospital = ?, school = ?, market_area = ?, description = ? WHERE id = ?");   
+   $update_listing->execute([$property_name, $address, $price, $type, $offer, $status, $furnished, $deposite, $bedroom, $bathroom, $carpet, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $description, $update_id]);
 
    $success_msg[] = 'listing updated successfully!';
 
@@ -356,15 +352,14 @@ if(isset($_POST['delete_image_05'])){
             <input type="number" name="deposite" required min="0" max="9999999999" value="<?= $fetch_property['deposite']; ?>" maxlength="10" placeholder="enter deposite amount" class="input">
          </div>
          <div class="box">
-            <p>property address <span>*</span></p>
-            <input type="text" name="address" required maxlength="100" placeholder="enter property full address" class="input" value="<?= $fetch_property['address']; ?>">
+            <p>property location <span>*</span></p>
+            <input type="text" name="address" required maxlength="100" placeholder="enter property location" class="input" value="<?= $fetch_property['address']; ?>">
          </div>
          <div class="box">
             <p>offer type <span>*</span></p>
             <select name="offer" required class="input">
                <option value="<?= $fetch_property['offer']; ?>" selected><?= $fetch_property['offer']; ?></option>
                <option value="sale">sale</option>
-               <option value="resale">resale</option>
                <option value="rent">rent</option>
             </select>
          </div>
@@ -392,21 +387,6 @@ if(isset($_POST['delete_image_05'])){
                <option value="furnished">furnished</option>
                <option value="semi-furnished">semi-furnished</option>
                <option value="unfurnished">unfurnished</option>
-            </select>
-         </div>
-         <div class="box">
-            <p>how many BHK <span>*</span></p>
-            <select name="bhk" required class="input">
-               <option value="<?= $fetch_property['bhk']; ?>" selected><?= $fetch_property['bhk']; ?> BHK</option>
-               <option value="1">1 BHK</option>
-               <option value="2">2 BHK</option>
-               <option value="3">3 BHK</option>
-               <option value="4">4 BHK</option>
-               <option value="5">5 BHK</option>
-               <option value="6">6 BHK</option>
-               <option value="7">7 BHK</option>
-               <option value="8">8 BHK</option>
-               <option value="9">9 BHK</option>
             </select>
          </div>
          <div class="box">
@@ -457,19 +437,15 @@ if(isset($_POST['delete_image_05'])){
             </select>
          </div>
          <div class="box">
-            <p>carpet area <span>*</span></p>
+            <p>square feet area <span>*</span></p>
             <input type="number" name="carpet" required min="1" max="9999999999" maxlength="10" placeholder="how many squarefits?" class="input" value="<?= $fetch_property['carpet']; ?>">
-         </div>
-         <div class="box">
-            <p>property age <span>*</span></p>
-            <input type="number" name="age" required min="0" max="99" maxlength="2" placeholder="how old is property?" class="input" value="<?= $fetch_property['age']; ?>">
          </div>
          <div class="box">
             <p>total floors <span>*</span></p>
             <input type="number" name="total_floors" required min="0" max="99" maxlength="2" placeholder="how floors available?" class="input" value="<?= $fetch_property['total_floors']; ?>">
          </div>
          <div class="box">
-            <p>floor room <span>*</span></p>
+            <p>floor number <span>*</span></p>
             <input type="number" name="room_floor" required min="0" max="99" maxlength="2" placeholder="property floor number" class="input" value="<?= $fetch_property['room_floor']; ?>">
          </div>
          <div class="box">

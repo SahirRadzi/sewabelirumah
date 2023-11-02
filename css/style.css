@@ -85,7 +85,7 @@ section {
   text-transform: capitalize;
 }
 
-.btn-whatsapp {
+a.btn-whatsapp {
   margin-top: 1rem;
   padding: 1rem 3rem;
   background-color: var(--whatsapp);
@@ -101,7 +101,7 @@ section {
   background-color: var(--black);
 }
 
-.btn-whatsapp:hover {
+a.btn-whatsapp:hover {
   text-transform: uppercase;
 }
 
@@ -216,7 +216,7 @@ section {
 }
 
 .home {
-  background: url("../images/home-bg2.jpg") no-repeat;
+  background: url("../images/home-bg4.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }

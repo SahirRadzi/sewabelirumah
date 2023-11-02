@@ -104,13 +104,13 @@ include 'components/save_send.php';
             </div>
          </div>
          <div class="box">
-            <div class="price"><i class="fas fa-indian-rupee-sign"></i><span><?= $fetch_property['price']; ?></span></div>
+            <div class="price"><b>RM <span><?= $fetch_property['price']; ?></span></b></div>
             <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
             <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
             <div class="flex">
                <p><i class="fas fa-house"></i><span><?= $fetch_property['type']; ?></span></p>
                <p><i class="fas fa-tag"></i><span><?= $fetch_property['offer']; ?></span></p>
-               <p><i class="fas fa-bed"></i><span><?= $fetch_property['bhk']; ?> BHK</span></p>
+               <p><i class="fas fa-bed"></i><span><?= $fetch_property['bedroom']; ?>Bedroom, <?= $fetch_property['bathroom']; ?>Bathroom</span></p>
                <p><i class="fas fa-trowel"></i><span><?= $fetch_property['status']; ?></span></p>
                <p><i class="fas fa-couch"></i><span><?= $fetch_property['furnished']; ?></span></p>
                <p><i class="fas fa-maximize"></i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
@@ -118,6 +118,7 @@ include 'components/save_send.php';
             <div class="flex-btn">
                <a href="view_property.php?get_id=<?= $fetch_property['id']; ?>" class="btn">view property</a>
                <input type="submit" value="send enquiry" name="send" class="btn">
+               <a href="https://api.whatsapp.com/send?phone=6<?=$fetch_user['number'];?>&text=Berminat...%20<?=$fetch_property['property_name'];?>%20%21%20%20RM%20<?=$fetch_property['price'];?>" class="btn-whatsapp">send whatsapp</a>
             </div>
          </div>
       </form>

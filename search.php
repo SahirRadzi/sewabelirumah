@@ -164,8 +164,6 @@ if(isset($_POST['h_search'])){
    $type = filter_var($type, FILTER_SANITIZE_STRING);
    $offer = $_POST['offer'];
    $offer = filter_var($offer, FILTER_SANITIZE_STRING);
-   $bhk = $_POST['bhk'];
-   $bhk = filter_var($bhk, FILTER_SANITIZE_STRING);
    $min = $_POST['min'];
    $min = filter_var($min, FILTER_SANITIZE_STRING);
    $max = $_POST['max'];
@@ -175,7 +173,7 @@ if(isset($_POST['h_search'])){
    $furnished = $_POST['furnished'];
    $furnished = filter_var($furnished, FILTER_SANITIZE_STRING);
 
-   $select_properties = $conn->prepare("SELECT * FROM `property` WHERE address LIKE '%{$location}%' AND type LIKE '%{$type}%' AND offer LIKE '%{$offer}%' AND bhk LIKE '%{$bhk}%' AND status LIKE '%{$status}%' AND furnished LIKE '%{$furnished}%' AND price BETWEEN $min AND $max ORDER BY date DESC");
+   $select_properties = $conn->prepare("SELECT * FROM `property` WHERE address LIKE '%{$location}%' AND type LIKE '%{$type}%' AND offer LIKE '%{$offer}%' AND status LIKE '%{$status}%' AND furnished LIKE '%{$furnished}%' AND price BETWEEN $min AND $max ORDER BY date DESC");
    $select_properties->execute();
 
 }else{
