@@ -367,9 +367,7 @@ if(isset($_POST['delete_image_05'])){
             <p>property type <span>*</span></p>
             <select name="type" required class="input">
                <option value="<?= $fetch_property['type']; ?>" selected><?= $fetch_property['type']; ?></option>
-               <option value="flat">flat</option>
                <option value="house">house</option>
-               <option value="shop">shop</option>
             </select>
          </div>
          <div class="box">

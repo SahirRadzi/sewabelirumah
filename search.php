@@ -54,9 +54,7 @@ include 'components/save_send.php';
             <div class="box">
                <p>property type</p>
                <select name="type" class="input" required>
-                  <option value="flat">flat</option>
                   <option value="house">house</option>
-                  <option value="shop">shop</option>
                </select>
             </div>
             <div class="box">

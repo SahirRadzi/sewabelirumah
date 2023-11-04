@@ -48,9 +48,7 @@ include 'components/save_send.php';
             <div class="box">
                <p>property type <span>*</span></p>
                <select name="h_type" class="input" required>
-                  <option value="flat">flat</option>
                   <option value="house">house</option>
-                  <option value="shop">shop</option>
                </select>
             </div>
             <div class="box">
@@ -147,18 +145,6 @@ include 'components/save_send.php';
       <div class="box">
          <img src="images/icon-3.png" alt="">
          <h3>sell house</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
-      </div>
-
-      <div class="box">
-         <img src="images/icon-4.png" alt="">
-         <h3>flats and buildings</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
-      </div>
-
-      <div class="box">
-         <img src="images/icon-5.png" alt="">
-         <h3>shops and malls</h3>
          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
       </div>
 
