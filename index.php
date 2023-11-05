@@ -132,26 +132,29 @@ include 'components/save_send.php';
 
       <div class="box">
          <img src="images/icon-1.png" alt="">
-         <h3>buy house</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+         <h3>Beli Rumah</h3>
+         <p>Disini merupakan platform memudahkan anda membuat pilihan bijak sebelum membeli Rumah Idaman.</p>
       </div>
 
       <div class="box">
          <img src="images/icon-2.png" alt="">
-         <h3>rent house</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+         <h3>Sewa Rumah</h3>
+         <p>Memudahkan anda sebagai pemilik(owner) untuk sewa kan kepada penyewa yang tepat.</p>
       </div>
 
       <div class="box">
          <img src="images/icon-3.png" alt="">
-         <h3>sell house</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+         <h3>Jual Rumah</h3>
+         <p>Anda Pemilik(owner)?</p>
+         <p>yang nak jual Rumah?</p>
+         <p>di sini lah tempat nya </p>
+         <p>kerana kita ada servis bantu owner jual rumah melalui ejen @ jual sendiri.</p>
       </div>
 
       <div class="box">
          <img src="images/icon-6.png" alt="">
-         <h3>24/7 service</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
+         <h3>24/7 Servis</h3>
+         <p>Bantuan serta khidmat pelanggan kami membantu anda 24/7</p>
       </div>
 
    </div>
