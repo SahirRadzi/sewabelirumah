@@ -289,22 +289,13 @@ include 'components/save_send.php';
 <?php include 'components/message.php'; ?>
 
 <!-- <script>
-   function sendwhatsapp(){
-      var phonenumber = document.getElementById("#phonenumber");
-
-      phonenumber.value;
-
-   }
-</script> -->
-
-<script>
 
    let range = document.querySelector("#range");
    range.oninput = () =>{
       document.querySelector('#output').innerHTML = range.value;
    }
 
-</script>
+</script> -->
 
 </body>
 </html>

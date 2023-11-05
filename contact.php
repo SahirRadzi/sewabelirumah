@@ -85,33 +85,24 @@ if(isset($_POST['send'])){
    <div class="box-container">
 
       <div class="box active">
-         <h3><span>how to cancel booking?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <h3><span>Di mana saya boleh booking?</span><i class="fas fa-angle-down"></i></h3>
+         <p>Urusan booking boleh direct agent @ direct tuan rumah.</p>
       </div>
 
       <div class="box active">
-         <h3><span>when will I get the possession?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <h3><span>Bagaimana nak hubungi bakal pembeli (buyer)?</span><i class="fas fa-angle-down"></i></h3>
+         <p>Sekiranya anda menambah senarai(listing) rumah anda. Sistem sudah menambah "button whatsapp" yang mana mereka mudah menghubungi anda.</p>
       </div>
 
       <div class="box">
-         <h3><span>where can I pay the rent?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <h3><span>Kenapa listing saya tidak kelihatan?</span><i class="fas fa-angle-down"></i></h3>
+         <p>1- Semak di bahagian my listings .. adakah sudah di "publish".</p>
+         <p>2- Boleh hubungi careline kami untuk bantuan lanjut.</p>
       </div>
 
       <div class="box">
-         <h3><span>how to contact with the buyers?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
-      </div>
-
-      <div class="box">
-         <h3><span>why my listing not showing up?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
-      </div>
-
-      <div class="box">
-         <h3><span>how to promote my listing?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
+         <h3><span>Bagaimana nak promote listing saya?</span><i class="fas fa-angle-down"></i></h3>
+         <p>Anda boleh promote dengan upload detail property di bahagian my listings.. bakal pembeli akan boleh lihat melalui pencarian.</p>
       </div>
 
    </div>

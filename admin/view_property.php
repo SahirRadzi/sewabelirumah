@@ -118,9 +118,9 @@ if(isset($_POST['delete'])){
          <div class="swiper-pagination"></div>
      </div>
       <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
-      <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
+      <p class="location"><span><?= $fetch_property['address']; ?></span></p>
       <div class="info">
-         <p><i class="fas fa-indian-rupee-sign"></i><span><?= $fetch_property['price']; ?></span></p>
+         <p><b><span style="color: #2980B9;">RM </span><span><?= $fetch_property['price']; ?></span></b></p>
          <p><i class="fas fa-user"></i><span><?= $fetch_user['name']; ?></span></p>
          <p><i class="fas fa-phone"></i><a href="tel:1234567890"><?= $fetch_user['number']; ?></a></p>
          <p><i class="fas fa-building"></i><span><?= $fetch_property['type']; ?></span></p>
@@ -130,18 +130,16 @@ if(isset($_POST['delete'])){
       <h3 class="title">details</h3>
       <div class="flex">
          <div class="box">
-            <p><i>rooms :</i><span><?= $fetch_property['bhk']; ?> BHK</span></p>
-            <p><i>deposit amount : </i><span><span class="fas fa-indian-rupee-sign" style="margin-right: .5rem;"></span><?= $fetch_property['deposite']; ?></span></p>
+            <p><i>deposit amount : </i><b><span>RM <?= $fetch_property['deposite']; ?></span></b></p>
             <p><i>status :</i><span><?= $fetch_property['status']; ?></span></p>
             <p><i>bedroom :</i><span><?= $fetch_property['bedroom']; ?></span></p>
             <p><i>bathroom :</i><span><?= $fetch_property['bathroom']; ?></span></p>
             <p><i>balcony :</i><span><?= $fetch_property['balcony']; ?></span></p>
          </div>
          <div class="box">
-            <p><i>carpet area :</i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
-            <p><i>age :</i><span><?= $fetch_property['age']; ?> years</span></p>
+            <p><i>square feet area :</i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
             <p><i>total floors :</i><span><?= $fetch_property['total_floors']; ?></span></p>
-            <p><i>room floor :</i><span><?= $fetch_property['room_floor']; ?></span></p>
+            <p><i>floor number :</i><span><?= $fetch_property['room_floor']; ?></span></p>
             <p><i>furnished :</i><span><?= $fetch_property['furnished']; ?></span></p>
             <p><i>loan :</i><span><?= $fetch_property['loan']; ?></span></p>
          </div>

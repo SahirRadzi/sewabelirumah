@@ -5,8 +5,8 @@
    <section class="flex">
 
       <div class="box">
-         <a href="#"><i class="fas fa-phone"></i><span>+601133165639</span></a>
-         <a href="#"><i class="fas fa-phone"></i><span>+60123456789</span></a>
+         <a href="https://api.whatsapp.com/send?phone=601110685733&text=Pertanyaan...SewaBeliRumah"><i class="fas fa-phone"></i><span>+601110685733</span></a>
+         <a href="https://api.whatsapp.com/send?phone=601133165639&text=Pertanyaan...SewaBeliRumah"><i class="fas fa-phone"></i><span>+601133165639</span></a>
          <a href="#"><i class="fas fa-envelope"></i><span>app.sewabelirumah@gmail.com</span></a>
          <a href="#"><i class="fas fa-map-marker-alt"></i><span>32040, Seri Manjung Perak.</span></a>
       </div>
@@ -21,8 +21,7 @@
 
       <div class="box">
          <a href="#"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
-         <a href="#"><span>twitter</span><i class="fab fa-twitter"></i></a>
-         <a href="#"><span>linkedin</span><i class="fab fa-linkedin"></i></a>
+         <a href="#"><span>youtube</span><i class="fab fa-youtube"></i></a>
          <a href="#"><span>instagram</span><i class="fab fa-instagram"></i></a>
 
       </div>
