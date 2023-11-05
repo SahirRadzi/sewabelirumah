@@ -49,6 +49,8 @@ include 'components/save_send.php';
                <p>property type <span>*</span></p>
                <select name="h_type" class="input" required>
                   <option value="house">house</option>
+                  <option value="flat">flat</option>
+                  <option value="shop">shop</option>
                </select>
             </div>
             <div class="box">

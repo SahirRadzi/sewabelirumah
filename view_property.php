@@ -99,9 +99,9 @@ include 'components/save_send.php';
             <p><i>Balcony :</i><span><?= $fetch_property['balcony']; ?></span></p>
          </div>
          <div class="box">
-            <p><i>Carpet Area :</i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
+            <p><i>Square Feet Area :</i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
             <p><i>Total Floors :</i><span><?= $fetch_property['total_floors']; ?></span></p>
-            <p><i>Room Floor :</i><span><?= $fetch_property['room_floor']; ?></span></p>
+            <p><i>Floor Number :</i><span><?= $fetch_property['room_floor']; ?></span></p>
             <p><i>Furnished :</i><span><?= $fetch_property['furnished']; ?></span></p>
             <p><i>Loan :</i><span><?= $fetch_property['loan']; ?></span></p>
          </div>
