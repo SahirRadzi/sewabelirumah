@@ -38,9 +38,9 @@ if(isset($_COOKIE['user_id'])){
          <img src="images/about-img.svg" alt="">
       </div>
       <div class="content">
-         <h3>why choose us?</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorem provident voluptatum distinctio laborum veritatis vitae suscipit praesentium fugiat unde?</p>
-         <a href="contact.html" class="inline-btn">contact us</a>
+         <h3>Kenapa memilih platform kami?</h3>
+         <p>Mudah, tidak memening kan kepada pengguna baru serta sangat efficien.</p>
+         <a href="contact.php" class="inline-btn">contact us</a>
       </div>
    </div>
 
@@ -52,26 +52,26 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="steps">
 
-   <h1 class="heading">3 simple steps</h1>
+   <h1 class="heading">3 langkah mudah</h1>
 
    <div class="box-container">
 
       <div class="box">
          <img src="images/step-1.png" alt="">
-         <h3>search property</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
+         <h3>carian hartanah</h3>
+         <p>Anda hanya perlu scroll dan "search" sahaja untuk mendapatkan rumah impian anda.</p>
       </div>
 
       <div class="box">
          <img src="images/step-2.png" alt="">
-         <h3>contact agents</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
+         <h3>hubungi agent @ pemilik</h3>
+         <p>mudah untuk hubungi mereka secara langsung dengan cepat.</p>
       </div>
 
       <div class="box">
          <img src="images/step-3.png" alt="">
-         <h3>enjoy property</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
+         <h3>nikmati hartanah anda</h3>
+         <p>siap !</p>
       </div>
 
    </div>
@@ -84,7 +84,7 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="reviews">
 
-   <h1 class="heading">client's reviews</h1>
+   <h1 class="heading">feedback pengguna terdahulu</h1>
 
    <div class="box-container">
 
