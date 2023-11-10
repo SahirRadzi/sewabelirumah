@@ -22,6 +22,8 @@ if(isset($_POST['post'])){
    $address = filter_var($address, FILTER_SANITIZE_STRING);
    $offer = $_POST['offer'];
    $offer = filter_var($offer, FILTER_SANITIZE_STRING);
+   $rental_day_month = $_POST['rental_day_month'];
+   $rental_day_month = filter_var($rental_day_month, FILTER_SANITIZE_STRING);
    $type = $_POST['type'];
    $type = filter_var($type, FILTER_SANITIZE_STRING);
    $status = $_POST['status'];
@@ -201,8 +203,8 @@ if(isset($_POST['post'])){
    if($image_01_size > 2000000){
       $warning_msg[] = 'image 01 size too large!';
    }else{
-      $insert_property = $conn->prepare("INSERT INTO `property`(id, user_id, property_name, address, price, type, offer, status, furnished, deposite, bedroom, bathroom, balcony, carpet, total_floors, room_floor, loan, lift, security_guard, play_ground, garden, water_supply, power_backup, parking_area, gym, shopping_mall, hospital, school, market_area, image_01, image_02, image_03, image_04, image_05, description) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
-      $insert_property->execute([$id, $user_id, $property_name, $address, $price, $type, $offer, $status, $furnished, $deposite, $bedroom, $bathroom, $balcony, $carpet, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $rename_image_01, $rename_image_02, $rename_image_03, $rename_image_04, $rename_image_05, $description]);
+      $insert_property = $conn->prepare("INSERT INTO `property`(id, user_id, property_name, address, price, type, offer, rental_day_month, status, furnished, deposite, bedroom, bathroom, balcony, carpet, total_floors, room_floor, loan, lift, security_guard, play_ground, garden, water_supply, power_backup, parking_area, gym, shopping_mall, hospital, school, market_area, image_01, image_02, image_03, image_04, image_05, description) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
+      $insert_property->execute([$id, $user_id, $property_name, $address, $price, $type, $offer, $rental_day_month, $status, $furnished, $deposite, $bedroom, $bathroom, $balcony, $carpet, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $rename_image_01, $rename_image_02, $rename_image_03, $rename_image_04, $rename_image_05, $description]);
       move_uploaded_file($image_01_tmp_name, $image_01_folder);
       $success_msg[] = 'property posted successfully!';
    }
@@ -238,6 +240,10 @@ if(isset($_POST['post'])){
          <p>property name <span>*</span></p>
          <input type="text" name="property_name" required maxlength="50" placeholder="enter property name" class="input">
       </div>
+      <div class="box">
+            <p>property location <span>*</span></p>
+            <input type="text" name="address" required maxlength="100" placeholder="enter property location" class="input">
+         </div>
       <div class="flex">
          <div class="box">
             <p>property price <span>*</span></p>
@@ -247,15 +253,19 @@ if(isset($_POST['post'])){
             <p>deposite amount <span>*</span></p>
             <input type="number" name="deposite" required min="0" max="9999999999" maxlength="10" placeholder="enter deposite amount" class="input">
          </div>
-         <div class="box">
-            <p>property location <span>*</span></p>
-            <input type="text" name="address" required maxlength="100" placeholder="enter property location" class="input">
-         </div>
+       
          <div class="box">
             <p>offer type <span>*</span></p>
             <select name="offer" required class="input">
                <option value="sale">sale</option>
                <option value="rent">rent</option>
+            </select>
+         </div>
+         <div class="box">
+            <p>if choose rental you need to select day or month </p>
+            <select name="rental_day_month" class="input">
+               <option value="day">day</option>
+               <option value="month">month</option>
             </select>
          </div>
          <div class="box">

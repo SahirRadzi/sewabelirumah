@@ -30,6 +30,8 @@ if(isset($_POST['update'])){
    $address = filter_var($address, FILTER_SANITIZE_STRING);
    $offer = $_POST['offer'];
    $offer = filter_var($offer, FILTER_SANITIZE_STRING);
+   $rental_day_month = $_POST['rental_day_month'];
+   $rental_day_month = filter_var($rental_day_month, FILTER_SANITIZE_STRING);
    $type = $_POST['type'];
    $type = filter_var($type, FILTER_SANITIZE_STRING);
    $status = $_POST['status'];
@@ -241,8 +243,8 @@ if(isset($_POST['update'])){
       }
    }
 
-   $update_listing = $conn->prepare("UPDATE `property` SET property_name = ?, address = ?, price = ?, type = ?, offer = ?, status = ?, furnished = ?, deposite = ?, bedroom = ?, bathroom = ?, carpet = ?, total_floors = ?, room_floor = ?, loan = ?, lift = ?, security_guard = ?, play_ground = ?, garden = ?, water_supply = ?, power_backup = ?, parking_area = ?, gym = ?, shopping_mall = ?, hospital = ?, school = ?, market_area = ?, description = ? WHERE id = ?");   
-   $update_listing->execute([$property_name, $address, $price, $type, $offer, $status, $furnished, $deposite, $bedroom, $bathroom, $carpet, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $description, $update_id]);
+   $update_listing = $conn->prepare("UPDATE `property` SET property_name = ?, address = ?, price = ?, type = ?, offer = ?, rental_day_month = ?, status = ?, furnished = ?, deposite = ?, bedroom = ?, bathroom = ?, carpet = ?, total_floors = ?, room_floor = ?, loan = ?, lift = ?, security_guard = ?, play_ground = ?, garden = ?, water_supply = ?, power_backup = ?, parking_area = ?, gym = ?, shopping_mall = ?, hospital = ?, school = ?, market_area = ?, description = ? WHERE id = ?");   
+   $update_listing->execute([$property_name, $address, $price, $type, $offer, $rental_day_month, $status, $furnished, $deposite, $bedroom, $bathroom, $carpet, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $description, $update_id]);
 
    $success_msg[] = 'listing updated successfully!';
 
@@ -342,6 +344,11 @@ if(isset($_POST['delete_image_05'])){
          <p>property name <span>*</span></p>
          <input type="text" name="property_name" required maxlength="50" placeholder="enter property name" value="<?= $fetch_property['property_name']; ?>" class="input">
       </div>
+
+      <div class="box">
+            <p>property location <span>*</span></p>
+            <input type="text" name="address" required maxlength="100" placeholder="enter property location" class="input" value="<?= $fetch_property['address']; ?>">
+      </div>
       <div class="flex">
          <div class="box">
             <p>property price <span>*</span></p>
@@ -351,16 +358,21 @@ if(isset($_POST['delete_image_05'])){
             <p>deposite amount <span>*</span></p>
             <input type="number" name="deposite" required min="0" max="9999999999" value="<?= $fetch_property['deposite']; ?>" maxlength="10" placeholder="enter deposite amount" class="input">
          </div>
-         <div class="box">
-            <p>property location <span>*</span></p>
-            <input type="text" name="address" required maxlength="100" placeholder="enter property location" class="input" value="<?= $fetch_property['address']; ?>">
-         </div>
+       
          <div class="box">
             <p>offer type <span>*</span></p>
             <select name="offer" required class="input">
                <option value="<?= $fetch_property['offer']; ?>" selected><?= $fetch_property['offer']; ?></option>
                <option value="sale">sale</option>
                <option value="rent">rent</option>
+            </select>
+         </div>
+         <div class="box">
+            <p>if choose rental you need to select day or month </p>
+            <select name="rental_day_month" class="input">
+               <option value="<?= $fetch_property['rental_day_month']; ?>" selected><?= $fetch_property['rental_day_month']; ?></option>
+               <option value="day">day</option>
+               <option value="month">month</option>
             </select>
          </div>
          <div class="box">
