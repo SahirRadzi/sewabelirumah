@@ -28,7 +28,7 @@
 
    </section>
 
-   <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span>SewaBeliRumah</span></div>
+   <div class="credit"><span>SewaBeliRumah</span> &copy; <?= date('Y'); ?> AIRRS VENTURE (003540822-X)</div>
 
 </footer>
 
