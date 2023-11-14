@@ -381,6 +381,7 @@ if(isset($_POST['delete_image_05'])){
                <option value="<?= $fetch_property['type']; ?>" selected><?= $fetch_property['type']; ?></option>
                   <option value="house">house</option>
                   <option value="flat">flat</option>
+                  <option value="apartment">apartment</option>
                   <option value="shop">shop</option>
             </select>
          </div>
@@ -453,11 +454,11 @@ if(isset($_POST['delete_image_05'])){
             <input type="number" name="carpet" required min="1" max="9999999999" maxlength="10" placeholder="how many squarefits?" class="input" value="<?= $fetch_property['carpet']; ?>">
          </div>
          <div class="box">
-            <p>total floors <span>*</span></p>
+            <p>total floors <span>*</span>(Flat or Apartment)</p>
             <input type="number" name="total_floors" required min="0" max="99" maxlength="2" placeholder="how floors available?" class="input" value="<?= $fetch_property['total_floors']; ?>">
          </div>
          <div class="box">
-            <p>floor number <span>*</span></p>
+            <p>floor number <span>*</span>(Flat or Apartment)</p>
             <input type="number" name="room_floor" required min="0" max="99" maxlength="2" placeholder="property floor number" class="input" value="<?= $fetch_property['room_floor']; ?>">
          </div>
          <div class="box">

@@ -264,6 +264,7 @@ if(isset($_POST['post'])){
          <div class="box">
             <p>if choose rental you need to select day or month </p>
             <select name="rental_day_month" class="input">
+               <option value="" disabled selected> select day or month--</option>
                <option value="day">day</option>
                <option value="month">month</option>
             </select>
@@ -273,6 +274,7 @@ if(isset($_POST['post'])){
             <select name="type" required class="input">
                   <option value="house">house</option>
                   <option value="flat">flat</option>
+                  <option value="apartment">apartment</option>
                   <option value="shop">shop</option>
             </select>
          </div>
@@ -341,11 +343,11 @@ if(isset($_POST['post'])){
             <input type="number" name="carpet" required min="1" max="9999999999" maxlength="10" placeholder="how many squarefits?" class="input">
          </div>
          <div class="box">
-            <p>total floors <span>*</span></p>
+            <p>total floors <span>*</span>(Flat or Apartment)</p>
             <input type="number" name="total_floors" required min="0" max="99" maxlength="2" placeholder="how floors available?" class="input">
          </div>
          <div class="box">
-            <p>floor number <span>*</span></p>
+            <p>floor number <span>*</span>(Flat or Apartment)</p>
             <input type="number" name="room_floor" required min="0" max="99" maxlength="2" placeholder="property floor number" class="input">
          </div>
          <div class="box">

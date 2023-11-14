@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="css/style.css">
 
    <!-- RECAPCHA -->
-   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 
 </head>
 <body>
@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
       <h3>welcome back!</h3>
       <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box">
       <input type="password" name="pass" required maxlength="20" placeholder="enter your password" class="box">
-      <div class="g-recaptcha" data-sitekey="6LdPUwspAAAAABPokUYN_brLXb6Ps4qWt5lRhBAl"></div>
+      <!-- <div class="g-recaptcha" data-sitekey="6LdPUwspAAAAABPokUYN_brLXb6Ps4qWt5lRhBAl"></div> -->
       <p>forgot password ? click <a href="forgot_pass.php">here</a></p>
       <p>don't have an account? <a href="register.php">register new</a></p>
       <input type="submit" value="login now" name="submit" class="btn">
