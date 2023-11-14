@@ -253,12 +253,12 @@ if(isset($_POST['h_search'])){
                <h3><?= substr($fetch_user['name'], 0, 1); ?></h3>
                <div>
                   <p><?= $fetch_user['name']; ?></p>
-                  <span><?= $fetch_property['date']; ?></span>
+                  <span><?= date("d-m-Y",strtotime($fetch_property['date'])); ?></span>
                </div>
             </div>
          </div>
          <div class="box">
-            <div class="price"><b>RM <span><?= $fetch_property['price']; ?><?php if($fetch_property['rental_day_month'] != "") {echo '/'." ".$fetch_property['rental_day_month'] ;} else {echo '';}  ;?></span></b></div>
+            <div class="price"><b>RM <span><?= $fetch_property['price']; ?> <?php if($fetch_property['rental_day_month'] != "") {echo '/'." ".$fetch_property['rental_day_month'] ;} else {echo '';}  ;?></span></b></div>
             <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
             <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
             <div class="flex">

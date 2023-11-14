@@ -232,7 +232,7 @@ include 'components/save_send.php';
                <h3><?= substr($fetch_user['name'], 0, 1); ?></h3>
                <div>
                   <p><?= $fetch_user['name']; ?></p>
-                  <span><?= $fetch_property['date']; ?></span>
+                  <span><?= date("d-m-Y",strtotime($fetch_property['date'])); ?></span>
                </div>
             </div>
          </div>
