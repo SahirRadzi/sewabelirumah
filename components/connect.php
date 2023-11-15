@@ -28,4 +28,47 @@
     return implode($rand);
  }
 
+//  $sql = $conn->prepare("SELECT * FROM `property` WHERE date = ?");
+//  $sql->execute();
+//  $posted_at = ($rows['date']);
+
+//  function convertToUnixTimestamp($value) {
+//    list($date, $time) = explode('', $value);
+//    list($year, $month, $day) = explode('-', $date);
+//    list($hour, $minutes, $seconds) = explode(':',$time);
+
+//    $unit_timestamp = mktime($hour, $minutes, $seconds, $month, $day, $year);
+
+//    return $unit_timestamp;
+   
+//  }
+
+// $sql = $conn->prepare("SELECT * FROM `property` WHERE date = ?");
+// $sql->execute();
+// $rows = $sql->fetch(PDO::FETCH_ASSOC); // Ambil row
+// $timestamp = $rows['date'];
+
+//  function convertToAgoFormat($timestamp){
+
+//    $diffBtwCurrentTimeAndTimestamp = time() - $timestamp;
+//    $periodsString = ["sec", "min", "hour", "day", "week", "month", "year", "decade"];
+//    $periodsNumber = ["60", "60", "24", "7", "4.35", "12", "10"];
+
+//    for($iterator = 0; $diffBtwCurrentTimeAndTimestamp >= $periodsNumber[$iterator]; $iterator++)
+
+//       $diffBtwCurrentTimeAndTimestamp /= $periodsNumber[$iterator];
+//       $diffBtwCurrentTimeAndTimestamp = round($diffBtwCurrentTimeAndTimestamp);
+
+//       if($diffBtwCurrentTimeAndTimestamp != 1) $periodsString[$iterator].="s";
+
+//       $output = "$diffBtwCurrentTimeAndTimestamp $periodsString[$iterator]"; //2 days
+
+//       return $output." ago";
+
+
+//  }
+
+//  $unixTimestamp = convertToUnixTimestamp($posted_at);
+
+
 ?>

@@ -366,18 +366,21 @@ a.btn-whatsapp:hover {
   color: var(--white);
 }
 
-.listings .box-container form .box .thumb .total-images {
+.listings .box-container form .box .thumb .info {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: var(--white);
-  padding: 0.5rem 1rem;
-  font-size: 1.7rem;
+  display: flex;
 }
 
-.listings .box-container form .box .thumb .total-images i {
+.listings .box-container form .box .thumb .info p {
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
   margin-right: 0.8rem;
+  padding: 0.5rem 1rem;
 }
 
 .listings .box-container form .box .admin {
