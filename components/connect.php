@@ -28,6 +28,8 @@
     return implode($rand);
  }
 
+
+
 //  $sql = $conn->prepare("SELECT * FROM `property` WHERE date = ?");
 //  $sql->execute();
 //  $posted_at = ($rows['date']);
@@ -42,11 +44,6 @@
 //    return $unit_timestamp;
    
 //  }
-
-// $sql = $conn->prepare("SELECT * FROM `property` WHERE date = ?");
-// $sql->execute();
-// $rows = $sql->fetch(PDO::FETCH_ASSOC); // Ambil row
-// $timestamp = $rows['date'];
 
 //  function convertToAgoFormat($timestamp){
 

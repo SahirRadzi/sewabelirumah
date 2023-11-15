@@ -226,7 +226,7 @@ include 'components/save_send.php';
             ?>
             <div class="thumb">
                <div class="info">
-                  <p class="total-images"><i class="far fa-image"></i> <span><?= $total_images; ?></span></p> 
+                  <p class="total-images"><i class="far fa-image"></i> <span><?= $total_images; ?></span></p>
                   <p class="clock"><i class="far fa-clock"></i> <span> 1h ago</span></p> 
                </div>
                <img src="uploaded_files/<?= $fetch_property['image_01']; ?>" alt="">
