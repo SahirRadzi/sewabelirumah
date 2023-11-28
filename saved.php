@@ -117,26 +117,29 @@ include 'components/save_send.php';
             <?php
                }
             ?>
-            <div class="thumb">
-               <p class="total-images"><i class="far fa-image"></i><span><?= $total_images; ?></span></p> 
+             <div class="thumb">
+               <div class="info">
+                  <p class="total-images"><i class="far fa-image"></i> <span><?= $total_images; ?></span></p>
+                  <!-- <p class="clock"><i class="far fa-clock"></i> <span> 1 hour ago</span></p>  -->
+               </div>
                <img src="uploaded_files/<?= $fetch_property['image_01']; ?>" alt="">
             </div>
             <div class="admin">
                <h3><?= substr($fetch_user['name'], 0, 1); ?></h3>
                <div>
                   <p><?= $fetch_user['name']; ?></p>
-                  <span><?= $fetch_property['date']; ?></span>
+                  <span><?= date("d-m-Y",strtotime($fetch_property['date'])); ?></span>
                </div>
             </div>
          </div>
          <div class="box">
-            <div class="price"><i class="fas fa-indian-rupee-sign"></i><span><?= $fetch_property['price']; ?></span></div>
+            <div class="price"><b>RM <span><?= $fetch_property['price']; ?> <?php if($fetch_property['rental_day_month'] != "") {echo '/'." ".$fetch_property['rental_day_month'] ;} else {echo '';}  ;?></span></b></div>
             <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
             <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
             <div class="flex">
                <p><i class="fas fa-house"></i><span><?= $fetch_property['type']; ?></span></p>
                <p><i class="fas fa-tag"></i><span><?= $fetch_property['offer']; ?></span></p>
-               <p><i class="fas fa-bed"></i><span><?= $fetch_property['bhk']; ?> BHK</span></p>
+               <p><i class="fas fa-bed"></i><span><?= $fetch_property['bedroom']; ?>Bedroom, <?= $fetch_property['bathroom']; ?>Bathroom</span></p>
                <p><i class="fas fa-trowel"></i><span><?= $fetch_property['status']; ?></span></p>
                <p><i class="fas fa-couch"></i><span><?= $fetch_property['furnished']; ?></span></p>
                <p><i class="fas fa-maximize"></i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
