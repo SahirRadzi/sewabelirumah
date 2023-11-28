@@ -11,6 +11,28 @@ if(isset($_SESSION['user_id'])){
    header('location:login.php');
 };
 
+$verification_status = "0";
+
+$check_user = $conn->prepare("SELECT * FROM `users` WHERE id = ? AND verification_status = ?");
+$check_user->execute([$user_id, $verification_status]);
+$row = $check_user->fetch(PDO::FETCH_ASSOC);
+
+if($check_user->rowCount() > 0){
+
+   if($verification_status == "verified"){
+      $_SESSION['user_id'] = $row['id'];
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['otp'] = $row['otp'];
+      header('location:index.php');
+   }
+   elseif($verification_status == "0"){
+      $_SESSION['user_id'] = $row['id'];
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['otp'] = $row['otp'];
+      header('location:verify.php');
+   }
+}
+
 $select_user = $conn->prepare("SELECT * FROM `users` WHERE id = ? LIMIT 1");
 $select_user->execute([$user_id]);
 $fetch_user = $select_user->fetch(PDO::FETCH_ASSOC);

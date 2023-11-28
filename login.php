@@ -16,10 +16,11 @@ if(isset($_POST['submit'])){
    $email = filter_var($email, FILTER_SANITIZE_STRING); 
    $pass = sha1($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING); 
+   $verification_status = "";
 
-   $select_users = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ? LIMIT 1");
-   $select_users->execute([$email, $pass]);
-   $row = $select_users->fetch(PDO::FETCH_ASSOC);
+   $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+   $select_user->execute([$email, $pass]);
+   $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
    if($select_user->rowCount() > 0){
       $_SESSION['user_id'] = $row['id'];
@@ -28,6 +29,7 @@ if(isset($_POST['submit'])){
       if($_SESSION['verification_status'] == "verified"){
          $_SESSION['user_id'] = $row['id'];
          header('location:index.php');
+         
       }elseif($_SESSION['verification_status'] == "0"){
          $_SESSION['user_id'] = $row['id'];
          $_SESSION['email'] = $row['email'];
@@ -35,7 +37,7 @@ if(isset($_POST['submit'])){
          header('location:verify.php');
       }
    }else{
-      $message[] = 'incorrect username or password!';
+      $warning_msg[] = 'incorrect username or password!';
    }
 
 }
