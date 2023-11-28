@@ -2,11 +2,13 @@
 
 include 'components/connect.php';
 
-if(isset($_COOKIE['user_id'])){
-   $user_id = $_COOKIE['user_id'];
+session_start();
+
+if(isset($_SESSION['user_id'])){
+   $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-}
+};
 
 if(isset($_POST['submit'])){
 
@@ -19,11 +21,21 @@ if(isset($_POST['submit'])){
    $select_users->execute([$email, $pass]);
    $row = $select_users->fetch(PDO::FETCH_ASSOC);
 
-   if($select_users->rowCount() > 0){
-      setcookie('user_id', $row['id'], time() + 60*60*24*30, '/');
-      header('location:index.php');
+   if($select_user->rowCount() > 0){
+      $_SESSION['user_id'] = $row['id'];
+      $_SESSION['verification_status'] = $row['verification_status'];
+
+      if($_SESSION['verification_status'] == "verified"){
+         $_SESSION['user_id'] = $row['id'];
+         header('location:index.php');
+      }elseif($_SESSION['verification_status'] == "0"){
+         $_SESSION['user_id'] = $row['id'];
+         $_SESSION['email'] = $row['email'];
+         $_SESSION['otp'] = $row['otp'];
+         header('location:verify.php');
+      }
    }else{
-      $warning_msg[] = 'Incorrect username or password!';
+      $message[] = 'incorrect username or password!';
    }
 
 }

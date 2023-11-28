@@ -2,12 +2,14 @@
 
 include 'components/connect.php';
 
-if(isset($_COOKIE['user_id'])){
-   $user_id = $_COOKIE['user_id'];
+session_start();
+
+if(isset($_SESSION['user_id'])){
+   $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
    header('location:login.php');
-}
+};
 
 if(isset($_GET['get_id'])){
    $get_id = $_GET['get_id'];

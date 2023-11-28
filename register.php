@@ -1,12 +1,32 @@
 <?php
 
+/*##########Script Information#########
+  # Purpose: Send mail Using PHPMailer#
+  #          & Gmail SMTP Server 	  #
+  # Created: 24-11-2019 			  #
+  #	Author : Hafiz Haider			  #
+  # Version: 1.0					  #
+  # Website: www.BroExperts.com 	  #
+  #####################################*/
+ 
+//Include required PHPMailer files
+require 'phpmailer/includes/PHPMailer.php';
+require 'phpmailer/includes/SMTP.php';
+require 'phpmailer/includes/Exception.php';
+//Define name spaces
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 include 'components/connect.php';
 
-if(isset($_COOKIE['user_id'])){
-   $user_id = $_COOKIE['user_id'];
+session_start();
+
+if(isset($_SESSION['user_id'])){
+   $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-}
+};
 
 if(isset($_POST['submit'])){
 
@@ -31,22 +51,71 @@ if(isset($_POST['submit'])){
       if($pass != $c_pass){
          $warning_msg[] = 'Password not matched!';
       }else{
-         $insert_user = $conn->prepare("INSERT INTO `users`(id, name, number, email, password) VALUES(?,?,?,?,?)");
-         $insert_user->execute([$id, $name, $number, $email, $c_pass]);
-         
-         if($insert_user){
-            $verify_users = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ? LIMIT 1");
-            $verify_users->execute([$email, $pass]);
-            $row = $verify_users->fetch(PDO::FETCH_ASSOC);
-         
-            if($verify_users->rowCount() > 0){
-               setcookie('user_id', $row['id'], time() + 60*60*24*30, '/');
-               header('location:index.php');
-            }else{
-               $error_msg[] = 'something went wrong!';
-            }
-         }
 
+         $verification_status = '0';
+         $rand_otp = create_verify_code();
+
+         $insert_user = $conn->prepare("INSERT INTO `users`(id, name, number, email, password, otp, verification_status) VALUES(?,?,?,?,?,?,?)");
+         $insert_user->execute([$id, $name, $number, $email, $c_pass, $rand_otp, $verification_status]);
+
+   //Create instance of PHPMailer
+	   $mail = new PHPMailer();
+   //Set mailer to use smtp
+      $mail->isSMTP();
+   //Define smtp host
+      $mail->Host = "smtp.gmail.com";
+   //Enable smtp authentication
+      $mail->SMTPAuth = true;
+   //Set smtp encryption type (ssl/tls)
+      $mail->SMTPSecure = "tls";
+   //Port to connect smtp
+      $mail->Port = "587";
+   //Set gmail username
+      $mail->Username = "app.sewabelirumah@gmail.com";
+   //Set gmail password
+      $mail->Password = "vqegysmelrzrxctg";
+   //Email subject
+      $mail->Subject = "App SewaBeliRumah | Verify OTP";
+   //Set sender email
+      $mail->setFrom(address:'app.sewabelirumah@gmail.com', name:'Admin SewaBeliRumah');
+   //Enable HTML
+      $mail->isHTML(true);
+   //Attachment
+   //	$mail->addAttachment('img/attachment.png');
+   //Email body
+      $mail->Body = "Please verify your account now.<br><br>Your OTP Number : <b>$rand_otp</b><br>Terima kasih.";
+   //Add recipient
+      $mail->addAddress("$email");
+   //Finally send email
+      if ( $mail->send() ) {
+         $message[] = "Email Sent Successfully!";
+      }else{
+         $message[] = "Message could not be sent. Mailer Error ";
+      }
+      //Closing smtp connection
+      $mail->smtpClose();
+         
+            $check_users = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ? AND otp = ? AND verification_status = ?");
+            $check_users->execute([$email, $pass, $rand_otp, $verification_status]);
+            $row = $check_users->fetch(PDO::FETCH_ASSOC);
+
+            if($check_users->rowCount() > 0 ){
+
+               if($verification_status == "verified"){
+                 
+                  $_SESSION['user_id'] = $row['id'];
+                  $_SESSION['email'] = $row['email'];
+                  $_SESSION['otp'] = $row['otp'];
+                  header('location:index.php');
+                  
+               }elseif($verification_status == "0"){
+                  
+                  $_SESSION['user_id'] = $row['id'];
+                  $_SESSION['email'] = $row['email'];
+                  $_SESSION['otp'] = $row['otp'];
+                  header('location:verify.php');
+               }
+            }
       }
    }
 

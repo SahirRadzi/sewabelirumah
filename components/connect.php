@@ -28,6 +28,18 @@
     return implode($rand);
  }
 
+ function create_verify_code(){
+   $str = '1234567890';
+   $rand = array();
+   $length = strlen($str) - 1;
+
+   for($i = 0; $i < 4; $i++){
+      $n = mt_rand(0, $length);
+      $rand[] = $str[$n];
+   }
+   return implode($rand);
+}
+
 
 
 //  $sql = $conn->prepare("SELECT * FROM `property` WHERE date = ?");
