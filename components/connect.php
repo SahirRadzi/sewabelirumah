@@ -67,5 +67,92 @@
 
 //  $unixTimestamp = convertToUnixTimestamp($posted_at);
 
+// $sql = $conn->prepare("SELECT * FROM `property`");
+// $sql->execute();
+// while ($rows = $sql->fetch(PDO::FETCH_ASSOC)){
+//    $cur_time = ($rows['date']);
+
+//    echo time_ago($cur_time);
+
+// }
+
+//    $sql = $conn->prepare("SELECT * FROM `property`");
+//    $sql->execute();
+//    if($sql->rowCount() > 0);
+//    while($rows = $sql->fetch(PDO::FETCH_ASSOC));
+//       $cur_time = $rows['date'];
+ 
+// function time_ago ($cur_time){
+      
+//    global $cur_time;
+//    $time_ = time() - $cur_time;
+
+//    $seconds = $time_;
+//    $minutes = round($time_ / 60 );
+//    $hours = round($time_ / 3600 );
+//    $days = round($time_ / 86400 );
+//    $weeks = round($time_ / 604800 );
+//    $months = round($time_ / 2419200 );
+//    $years = round($time_ / 29030400 );
+
+//    //Seconds
+//    if ($seconds <= 60 ){
+//       $time = "$seconds seconds ago";
+
+//    //Minutes
+//    }elseif ($minutes <= 60 ){
+      
+//       if($minutes == 1 ){
+//          $time = "1 minute ago";
+//       }else{
+//          $time = "$minutes minutes ago";
+
+//       }
+//    //Hours
+//    }elseif ($hours <= 24 ){
+
+//       if($hours == 1){
+//          $time = "1 hour ago";
+
+//       }else{
+//          $time = "$hours hours ago";
+//       }
+//    //Days
+//    }elseif ($days <= 7){
+
+//       if($days == 1){
+//          $time = "1 day ago";
+//       }else{
+//          $time = "$days days ago";
+
+//       }
+//    //Weeks
+//    }elseif ($weeks <= 4){
+
+//       if($weeks == 1){
+//          $time = "1 week ago";
+//       }else{
+//          $time = "$weeks weeks ago";
+//       }
+//    //Months
+//    }elseif ($months <= 12){
+
+//       if($months == 1){
+//          $time = "1 month ago";
+//       }else{
+//          $time = "$months months ago";
+//       }
+//    //Years
+//    }else{
+//       if($years == 1){
+//          $time = "1 year ago";
+//       }else{
+//          $time = "$years years ago";
+//       }
+
+//    }
+
+//    return $time;
+// }
 
 ?>
