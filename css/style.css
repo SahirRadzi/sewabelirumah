@@ -373,7 +373,8 @@ a.btn-whatsapp:hover {
   display: flex;
 }
 
-.listings .box-container form .box .thumb .info p {
+.listings .box-container form .box .thumb .info p,
+.listings .box-container form .box .thumb .info p .timeago {
   font-weight: 500;
   font-size: 1.7rem;
   color: var(--white);
