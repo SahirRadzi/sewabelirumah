@@ -93,8 +93,15 @@ include 'components/save_send.php';
                }
             ?>
             <div class="thumb">
-               <p class="total-images"><i class="far fa-image"></i><span><?= $total_images; ?></span></p>
-               
+            <div class="info">
+                  <p class="total-images"><i class="far fa-image"></i> <span><?= $total_images; ?></span></p>
+                  <?php 
+                  $select_time_post = $conn->prepare("SELECT * FROM `property`");
+                  $select_time_post->execute();
+                     $fetch_timeAgo = $select_time_post->fetch(PDO::FETCH_ASSOC);
+                  ?>
+                  <p class="clock"><i class="far fa-clock"></i> <time class="timeago" datetime="<?= $fetch_timeAgo['date'] ;?>"></time></p> 
+               </div>
                <img src="uploaded_files/<?= $fetch_property['image_01']; ?>" alt="">
             </div>
             <div class="admin">
@@ -154,6 +161,16 @@ include 'components/save_send.php';
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
+
+<script src="timeago/jquery-3.7.1.min.js"></script>
+<script src="timeago/jquery.timeago.js"></script>
+
+<script>
+      jQuery(document).ready(function() {
+      jQuery("time.timeago").timeago();
+});
+
+</script>
 
 <?php include 'components/message.php'; ?>
 
