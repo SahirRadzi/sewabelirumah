@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
+   header('location:login');
 };
 
 if(isset($_POST['delete'])){
@@ -125,15 +125,15 @@ if(isset($_POST['delete'])){
       <h3 class="name"><?= $fetch_property['property_name']; ?></h3>
       <p class="location"><i class="fas fa-map-marker-alt"></i><span><?= $fetch_property['address']; ?></span></p>
       <div class="flex-btn">
-         <a href="update_property.php?get_id=<?= $property_id; ?>" class="btn">update</a>
+         <a href="update_property?get_id=<?= $property_id; ?>" class="btn">update</a>
          <input type="submit" name="delete" value="delete" class="btn" onclick="return confirm('delete this listing?');">
       </div>
-      <a href="view_property.php?get_id=<?= $property_id; ?>" class="btn">view property</a>
+      <a href="view_property?get_id=<?= $property_id; ?>" class="btn">view property</a>
    </form>
    <?php
          }
       }else{
-         echo '<p class="empty">no properties added yet! <a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a></p>';
+         echo '<p class="empty">no properties added yet! <a href="post_property" style="margin-top:1.5rem;" class="btn">add new</a></p>';
       }
       ?>
 

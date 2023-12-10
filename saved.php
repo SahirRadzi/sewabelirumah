@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
+   header('location:login');
 };
 
 $verification_status = "0";
@@ -23,13 +23,13 @@ if($check_user->rowCount() > 0){
       $_SESSION['user_id'] = $row['id'];
       $_SESSION['email'] = $row['email'];
       $_SESSION['otp'] = $row['otp'];
-      header('location:index.php');
+      header('location:index');
    }
    elseif($verification_status == "0"){
       $_SESSION['user_id'] = $row['id'];
       $_SESSION['email'] = $row['email'];
       $_SESSION['otp'] = $row['otp'];
-      header('location:verify.php');
+      header('location:verify');
    }
 }
 
@@ -145,7 +145,7 @@ include 'components/save_send.php';
                <p><i class="fas fa-maximize"></i><span><?= $fetch_property['carpet']; ?>sqft</span></p>
             </div>
             <div class="flex-btn">
-               <a href="view_property.php?get_id=<?= $fetch_property['id']; ?>" class="btn">view property</a>
+               <a href="view_property?get_id=<?= $fetch_property['id']; ?>" class="btn">view property</a>
                <input type="submit" value="send enquiry" name="send" class="btn">
             </div>
          </div>

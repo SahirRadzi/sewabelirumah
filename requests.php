@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
+   header('location:login');
 };
 
 if(isset($_POST['delete'])){
@@ -78,7 +78,7 @@ if(isset($_POST['delete'])){
       <form action="" method="POST">
          <input type="hidden" name="request_id" value="<?= $fetch_request['id']; ?>">
          <input type="submit" value="delete request" class="btn" onclick="return confirm('remove this request?');" name="delete">
-         <a href="view_property.php?get_id=<?= $fetch_property['id']; ?>" class="btn">view property</a>
+         <a href="view_property?get_id=<?= $fetch_property['id']; ?>" class="btn">view property</a>
       </form>
    </div>
    <?php

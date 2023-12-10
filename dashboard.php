@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
+   header('location:login');
 };
 
 ?>
@@ -46,13 +46,13 @@ if(isset($_SESSION['user_id'])){
       ?>
       <h3>welcome!</h3>
       <p><?= $fetch_profile['name']; ?></p>
-      <a href="update.php" class="btn">update profile</a>
+      <a href="update" class="btn">update profile</a>
       </div>
 
       <div class="box">
          <h3>filter search</h3>
          <p>search your dream property</p>
-         <a href="search.php" class="btn">search now</a>
+         <a href="search" class="btn">search now</a>
       </div>
 
       <div class="box">
@@ -63,7 +63,7 @@ if(isset($_SESSION['user_id'])){
       ?>
       <h3><?= $total_properties; ?></h3>
       <p>properties listed</p>
-      <a href="my_listings.php" class="btn">view all listings</a>
+      <a href="my_listings" class="btn">view all listings</a>
       </div>
 
       <div class="box">
@@ -74,7 +74,7 @@ if(isset($_SESSION['user_id'])){
       ?>
       <h3><?= $total_requests_received; ?></h3>
       <p>requests received</p>
-      <a href="requests.php" class="btn">view all requests</a>
+      <a href="requests" class="btn">view all requests</a>
       </div>
 
       <div class="box">
@@ -85,7 +85,7 @@ if(isset($_SESSION['user_id'])){
       ?>
       <h3><?= $total_requests_sent; ?></h3>
       <p>requests sent</p>
-      <a href="saved.php" class="btn">view saved properties</a>
+      <a href="saved" class="btn">view saved properties</a>
       </div>
 
       <div class="box">
@@ -96,7 +96,7 @@ if(isset($_SESSION['user_id'])){
       ?>
       <h3><?= $total_saved_properties; ?></h3>
       <p>properties saved</p>
-      <a href="saved.php" class="btn">view saved properties</a>
+      <a href="saved" class="btn">view saved properties</a>
       </div>
 
    </div>

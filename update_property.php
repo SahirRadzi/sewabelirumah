@@ -8,14 +8,14 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
+   header('location:login');
 };
 
 if(isset($_GET['get_id'])){
    $get_id = $_GET['get_id'];
 }else{
    $get_id = '';
-   header('location:index.php');
+   header('location:index');
 }
 
 if(isset($_POST['update'])){
@@ -538,7 +538,7 @@ if(isset($_POST['delete_image_05'])){
    <?php
       }
    }else{
-      echo '<p class="empty">property not found! <a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a></p>';
+      echo '<p class="empty">property not found! <a href="post_property" style="margin-top:1.5rem;" class="btn">add new</a></p>';
    }
    ?>
 

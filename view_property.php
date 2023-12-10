@@ -14,7 +14,7 @@ if(isset($_GET['get_id'])){
    $get_id = $_GET['get_id'];
 }else{
    $get_id = '';
-   header('location:index.php');
+   header('location:index');
 }
 
 include 'components/save_send.php';
@@ -108,7 +108,7 @@ include 'components/save_send.php';
             <p><i>Loan :</i><span><?= $fetch_property['loan']; ?></span></p>
          </div>
       </div>
-      <h3 class="title">amenities</h3>
+      <h3 class="title">facilities</h3>
       <div class="flex">
          <div class="box">
             <p><i class="fas fa-<?php if($fetch_property['lift'] == 'yes'){echo 'check';}else{echo 'times';} ?>"></i><span>lifts</span></p>
@@ -149,7 +149,7 @@ include 'components/save_send.php';
    <?php
       }
    }else{
-      echo '<p class="empty">property not found! <a href="post_property.php" style="margin-top:1.5rem;" class="btn">add new</a></p>';
+      echo '<p class="empty">property not found! <a href="post_property" style="margin-top:1.5rem;" class="btn">add new</a></p>';
    }
    ?>
 

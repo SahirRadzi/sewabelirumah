@@ -34,7 +34,7 @@ if(isset($_SESSION['user_id'])){
                         $_SESSION['verification_status'] = $row['verification_status'];
                 
                         $success_msg[] = "success!";
-                        header('location:index.php');
+                        header('location:index');
                     }
                 }
             }

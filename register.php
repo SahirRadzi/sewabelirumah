@@ -106,14 +106,14 @@ if(isset($_POST['submit'])){
                   $_SESSION['user_id'] = $row['id'];
                   $_SESSION['email'] = $row['email'];
                   $_SESSION['otp'] = $row['otp'];
-                  header('location:index.php');
+                  header('location:index');
                   
                }elseif($verification_status == "0"){
                   
                   $_SESSION['user_id'] = $row['id'];
                   $_SESSION['email'] = $row['email'];
                   $_SESSION['otp'] = $row['otp'];
-                  header('location:verify.php');
+                  header('location:verify');
                }
             }
       }
@@ -153,7 +153,7 @@ if(isset($_POST['submit'])){
       <input type="number" name="number" required min="0" max="9999999999" maxlength="11" placeholder="enter your number" class="box">
       <input type="password" name="pass" required maxlength="20" placeholder="enter your password" class="box">
       <input type="password" name="c_pass" required maxlength="20" placeholder="confirm your password" class="box">
-      <p>already have an account? <a href="login.php">login now</a></p>
+      <p>already have an account? <a href="login">login now</a></p>
       <input type="submit" value="register now" name="submit" class="btn">
    </form>
 

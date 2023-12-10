@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-   header('location:login.php');
+   header('location:login');
 };
 
 $verification_status = "0";
@@ -23,13 +23,13 @@ if($check_user->rowCount() > 0){
       $_SESSION['user_id'] = $row['id'];
       $_SESSION['email'] = $row['email'];
       $_SESSION['otp'] = $row['otp'];
-      header('location:index.php');
+      header('location:index');
    }
    elseif($verification_status == "0"){
       $_SESSION['user_id'] = $row['id'];
       $_SESSION['email'] = $row['email'];
       $_SESSION['otp'] = $row['otp'];
-      header('location:verify.php');
+      header('location:verify');
    }
 }
 
@@ -231,7 +231,7 @@ if(isset($_POST['post'])){
       $insert_property->execute([$id, $user_id, $property_name, $address, $price, $type, $offer, $rental_day_month, $status, $furnished, $deposite, $bedroom, $bathroom, $balcony, $carpet, $total_floors, $room_floor, $loan, $lift, $security_guard, $play_ground, $garden, $water_supply, $power_backup, $parking_area, $gym, $shopping_mall, $hospital, $school, $market_area, $rename_image_01, $rename_image_02, $rename_image_03, $rename_image_04, $rename_image_05, $description]);
       move_uploaded_file($image_01_tmp_name, $image_01_folder);
       $success_msg[] = 'property posted successfully!';
-      header('location:my_listings.php');
+      header('location:my_listings');
    }
 
 }
