@@ -6,14 +6,14 @@ if(isset($_COOKIE['admin_id'])){
    $admin_id = $_COOKIE['admin_id'];
 }else{
    $admin_id = '';
-   header('location:login.php');
+   header('location:login');
 }
 
 if(isset($_GET['get_id'])){
    $get_id = $_GET['get_id'];
 }else{
    $get_id = '';
-   header('location:dashboard.php');
+   header('location:dashboard');
 }
 
 if(isset($_POST['delete'])){
@@ -144,7 +144,7 @@ if(isset($_POST['delete'])){
             <p><i>loan :</i><span><?= $fetch_property['loan']; ?></span></p>
          </div>
       </div>
-      <h3 class="title">amenities</h3>
+      <h3 class="title">facilities</h3>
       <div class="flex">
          <div class="box">
             <p><i class="fas fa-<?php if($fetch_property['lift'] == 'yes'){echo 'check';}else{echo 'times';} ?>"></i><span>lifts</span></p>
@@ -173,7 +173,7 @@ if(isset($_POST['delete'])){
    <?php
       }
    }else{
-      echo '<p class="empty">property not found! <a href="listings.php" style="margin-top:1.5rem;" class="option-btn">go to listings</a></p>';
+      echo '<p class="empty">property not found! <a href="listings" style="margin-top:1.5rem;" class="option-btn">go to listings</a></p>';
    }
    ?>
 

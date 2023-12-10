@@ -6,7 +6,7 @@ if(isset($_COOKIE['admin_id'])){
    $admin_id = $_COOKIE['admin_id'];
 }else{
    $admin_id = '';
-   header('location:login.php');
+   header('location:login');
 }
 
 $select_profile = $conn->prepare("SELECT * FROM `admins` WHERE id = ? LIMIT 1");

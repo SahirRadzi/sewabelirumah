@@ -6,7 +6,7 @@ if(isset($_COOKIE['admin_id'])){
    $admin_id = $_COOKIE['admin_id'];
 }else{
    $admin_id = '';
-   header('location:login.php');
+   header('location:login');
 }
 
 ?>
@@ -48,7 +48,7 @@ if(isset($_COOKIE['admin_id'])){
       ?>
       <h3>welcome!</h3>
       <p><?= $fetch_profile['name']; ?></p>
-      <a href="update.php" class="btn">update profile</a>
+      <a href="update" class="btn">update profile</a>
    </div>
 
    <div class="box">
@@ -59,7 +59,7 @@ if(isset($_COOKIE['admin_id'])){
       ?>
       <h3><?= $count_listings; ?></h3>
       <p>property posted</p>
-      <a href="listings.php" class="btn">view listings</a>
+      <a href="listings" class="btn">view listings</a>
    </div>
 
    <div class="box">
@@ -70,7 +70,7 @@ if(isset($_COOKIE['admin_id'])){
       ?>
       <h3><?= $count_users; ?></h3>
       <p>total users</p>
-      <a href="users.php" class="btn">view users</a>
+      <a href="users" class="btn">view users</a>
    </div>
 
    <div class="box">
@@ -81,7 +81,7 @@ if(isset($_COOKIE['admin_id'])){
       ?>
       <h3><?= $count_admins; ?></h3>
       <p>total admins</p>
-      <a href="admins.php" class="btn">view admins</a>
+      <a href="admins" class="btn">view admins</a>
    </div>
 
    <div class="box">
@@ -92,7 +92,7 @@ if(isset($_COOKIE['admin_id'])){
       ?>
       <h3><?= $count_messages; ?></h3>
       <p>new messages</p>
-      <a href="messages.php" class="btn">view messages</a>
+      <a href="messages" class="btn">view messages</a>
    </div>
 
    </div>

@@ -6,7 +6,7 @@ if(isset($_COOKIE['admin_id'])){
    $admin_id = $_COOKIE['admin_id'];
 }else{
    $admin_id = '';
-   header('location:login.php');
+   header('location:login');
 }
 
 if(isset($_POST['delete'])){
@@ -79,8 +79,8 @@ if(isset($_POST['delete'])){
    <?php if( $fetch_admins['id'] == $admin_id){ ?>
    <div class="box" style="order: -1;">
       <p>name : <span><?= $fetch_admins['name']; ?></p>
-      <a href="update.php" class="option-btn">update account</a>
-      <a href="register.php" class="btn">register new</a>
+      <a href="update" class="option-btn">update account</a>
+      <a href="register" class="btn">register new</a>
    </div>
    <?php }else{?>
    <div class="box">
@@ -100,7 +100,7 @@ if(isset($_POST['delete'])){
       <p class="empty">no admins added yet!</p>
       <div class="box" style="text-align: center;">
       <p>create a new admin</p>
-      <a href="register.php" class="btn">register now</a>
+      <a href="register" class="btn">register now</a>
    </div>
    <?php
       }

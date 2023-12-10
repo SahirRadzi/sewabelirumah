@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 
    if($select_admins->rowCount() > 0){
       setcookie('admin_id', $row['id'], time() + 60*60*24*30, '/');
-      header('location:dashboard.php');
+      header('location:dashboard');
    }else{
       $warning_msg[] = 'Incorrect username or password!';
    }

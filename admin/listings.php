@@ -6,7 +6,7 @@ if(isset($_COOKIE['admin_id'])){
    $admin_id = $_COOKIE['admin_id'];
 }else{
    $admin_id = '';
-   header('location:login.php');
+   header('location:login');
 }
 
 if(isset($_POST['delete'])){
@@ -144,7 +144,7 @@ if(isset($_POST['delete'])){
       <p class="location"><i class="fas fa-map-marker-alt"></i><?= $fetch_listing['address']; ?></p>
       <form action="" method="POST">
          <input type="hidden" name="delete_id" value="<?= $listing_id; ?>">
-         <a href="view_property.php?get_id=<?= $listing_id; ?>" class="btn">view property</a>
+         <a href="view_property?get_id=<?= $listing_id; ?>" class="btn">view property</a>
          <input type="submit" value="delete listing" onclick="return confirm('delete this listing?');" name="delete" class="delete-btn">
       </form>
    </div>
